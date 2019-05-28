@@ -24,6 +24,10 @@ export default {
     },
     methods: {
       createNew() {
+        if(this.quote === '') {
+          alert("quote cant be empty!");
+          return;
+        }
         this.$emit('quoteAdded', this.quote);
         this.quote = '';
       }
@@ -38,5 +42,6 @@ export default {
   columns: #444;
   border: 1px solid rgb(68, 67, 67);
   padding: 12px; 
+  margin: 16px auto;
 }
 </style>
